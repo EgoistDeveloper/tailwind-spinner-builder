@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tailwind CSS to SASS Converter</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"
+    />
+
+    <!-- Roboto Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+      rel="stylesheet"
+    />
+
+    <!-- Vuetify -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="loader">Loading...</div>
+
+    <div id="app">
+      <!-- <v-app v-cloak> -->
+      <v-app>
+        <!-- Main Container -->
+        <v-main class="my-5">
+          <v-container fluid>
+            <!-- Size -->
+            <v-row>
+              <v-col cols="2" class="px-0">
+                <v-subheader> Size </v-subheader>
+              </v-col>
+
+              <v-col cols="3">
+                <v-slider
+                  v-model="spinnerSize"
+                  thumb-label="always"
+                  min="10"
+                  max="64"
+                  step="2"
+                ></v-slider>
+              </v-col>
+            </v-row>
+
+            <!-- Rounded -->
+            <v-row>
+              <v-col cols="2" class="px-0">
+                <v-subheader> Rounded </v-subheader>
+              </v-col>
+
+              <v-col cols="3">
+                <v-slider
+                  v-model="roundedSize"
+                  thumb-label="always"
+                  min="0"
+                  max="50"
+                  step="1"
+                ></v-slider>
+              </v-col>
+            </v-row>
+          </v-container>
+
+          <v-container fluid>
+            <div v-bind:class="getSpinnerClass()"></div>
+          </v-container>
+        </v-main>
+      </v-app>
+    </div>
+
+    <!-- VueJS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.min.js"></script>
+
+    <!-- Vuetify -->
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.js"></script>
+
+    <!-- clipboard.js -->
+    <script src="https://unpkg.com/clipboard@latest/dist/clipboard.min.js"></script>
+
+    <!-- App Script -->
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
